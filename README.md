@@ -1,3 +1,3 @@
-# Senai.Exercicio.ArquivosParaBanco
+# ArquivosParaOBanco
 
 Exercicio do senai
