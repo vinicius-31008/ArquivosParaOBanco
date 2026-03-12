@@ -8,8 +8,8 @@
 
     <style>
         .progresso {
-            width: 100%;
-            background-color: #ddd;
+            width: 30%;
+            background-color: #b8b8b8;
         }
 
         .progresso-barra {
@@ -39,7 +39,7 @@
         <br><br>
 
         <div class="progresso">
-            <div class="progresso-barra"></div>
+            <div class="progresso-barra" id="barra"></div>
         </div>
         <br>
 
@@ -48,42 +48,48 @@
 
     </form>
 
-    <script>
-        function lerArquivo() {
-            const input = document.getElementById('arquivo');
-            const textarea = document.getElementById('conteudo');
-            const file = input.files[0];
 
-            if (file) {
-                const reader = new FileReader();
 
-                reader.onload = function (e) {
-                    textarea.value = e.target.result;
-                };
+<script>
+function lerArquivo() {
+    const input = document.getElementById('arquivo');
+    const textarea = document.getElementById('conteudo');
+    const file = input.files[0];
 
-                reader.readAsText(file);
+    if (file) {
+        const reader = new FileReader();
 
-            } else {
-                alert('Selecione um arquivo para carregar o conteudo');
-            }
+        reader.onload = function (e) {
+            textarea.value = e.target.result;
+        };
 
-            document.querySelector('form').addEventListener('submit', function () {
-                const barra = document.getElementById('barra');
-                let width = 0;
+        reader.readAsText(file);
 
-                const progresso = setInterval(() => {
-                    if (width >= 100) {
-                        clearInterval(progresso);
-                    } else {
-                        width++;
-                        barra.style.width = width + '%';
-                        barra.textContent = width + '%';
-                    }
-                }, 50);
-            });
+    } else {
+        alert('Selecione um arquivo para carregar o conteudo');
+    }
+}
+
+document.querySelector('form').addEventListener('submit', function () {
+    const barra = document.getElementById('barra');
+    let width = 0;
+
+    const progresso = setInterval(() => {
+        if (width >= 100) {
+            clearInterval(progresso);
+        } else {
+            width++;
+            barra.style.width = width + '%';
+            barra.textContent = width + '%';
         }
-    </script>
+    }, 50);
+});
+</script>
 
+
+
+
+    
 </body>
 
 </html>
