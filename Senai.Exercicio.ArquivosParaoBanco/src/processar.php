@@ -23,7 +23,7 @@ if(isset($_POST['salvar'])){
         }
 
         echo "Dados inseridos com sucesso!<br>";
-        echo "<a href=\"/projects/ArquivosParaBanco/Senai.Exercicio.ArquivosParaoBanco/src/\">Voltar para a página inicial</a>";
+        echo "<a href='index.php'>Voltar para a página inicial</a>";
     }else{
         echo "Nenhum arquivo inserido";
     }

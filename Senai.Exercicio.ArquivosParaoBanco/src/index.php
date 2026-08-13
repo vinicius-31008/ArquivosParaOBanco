@@ -85,10 +85,6 @@ document.querySelector('form').addEventListener('submit', function () {
     }, 50);
 });
 </script>
-
-
-
-
     
 </body>
 
