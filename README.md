@@ -145,6 +145,6 @@ CREATE TABLE clientes (
 
 ---
 
-## 📚 Créditos
+## Créditos
 
 Exercício desenvolvido como parte do curso técnico do **SENAI**.
